@@ -1,0 +1,9 @@
+<hr />
+<%= form_for [@song] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true, autofocus: true %>
+  <br />
+  <%= f.label :artist %>
+  <%= f.text_area :artist, required: true %>
+<br />
+<% end %>

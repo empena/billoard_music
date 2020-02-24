@@ -1,2 +1,19 @@
-<h1>Bboards#index</h1>
-<p>Find me in app/views/bboards/index.html.erb</p>
+<h1>Music Billboards</h1>
+
+
+
+<div class="row">
+<% @bboards.in_groups_of(3, false).each do |group| %>
+  <% group.each do |bboard| %>
+   <div class="col-12 col-md-4 mt-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= bboard.genre %></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link"><%= link_to 'View', bboard %></a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</div>

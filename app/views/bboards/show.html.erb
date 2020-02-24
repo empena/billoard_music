@@ -1,2 +1,15 @@
-<h1>Bboards#show</h1>
-<p>Find me in app/views/bboards/show.html.erb</p>
+<h1>Billboard: <%= @bboard.genre %></h1>
+
+<p><%= link_to 'Back', bboards_path %> | <%= link_to 'Add Song', artist_song_path(@bboard) %></p>
+
+<p><%= @bboard.genre %></p>
+
+<% if @songs.any? %>
+  <% @songs.each do |song| %>
+    <p><%= song.title %></p>
+     <%= link_to 'Remove From Billboard', artist_songs_path(@bboard, song), method: :delete %>
+  <% end %>
+
+<% end %>
+
+
